@@ -1,16 +1,16 @@
 const express = require("express");
 const router = express.Router();
-const User = require("../models/userModel")
+const Admin = require("../models/adminModel")
 
 
-router.post("/login", async(req, res) => {
+router.post("/adminlogin", async(req, res) => {
 
       const {username , password} = req.body
 
       try {
-          const user = await User.findOne({username , password})
-          if(user) {
-              res.send(user)
+          const admin = await Admin.findOne({username , password})
+          if(admin) {
+              res.send(admin)
           }
           else{
               return res.status(400).json(error);
@@ -21,11 +21,11 @@ router.post("/login", async(req, res) => {
   
 });
 
-router.post("/register", async(req, res) => {
+router.post("/adminregister", async(req, res) => {
     try {
-        const newuser = new User(req.body)
-        await newuser.save()
-        res.send('User registered successfully')
+        const newAdmin = new Admin(req.body)
+        await newAdmin.save()
+        res.send('Admin registered successfully')
     } catch (error) {
       return res.status(400).json(error);
     }

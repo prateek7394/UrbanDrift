@@ -27,6 +27,10 @@ function Home() {
 
     function setFilter(values){
 
+        if(values==null){
+            return;
+        }
+
         var selectedFrom = moment(values[0] , 'MMM DD yyyy HH:mm')
         var selectedTo = moment(values[1] , 'MMM DD yyyy HH:mm')
 

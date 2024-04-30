@@ -5,7 +5,6 @@ import { deleteCar, getAllCars } from "../redux/actions/carsActions";
 import { Col, Row, Divider, DatePicker, Checkbox, Edit } from "antd";
 import { Link } from "react-router-dom";
 import Spinner from "../components/Spinner";
-import moment from "moment";
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { Popconfirm, message } from "antd";
 const { RangePicker } = DatePicker;
@@ -30,7 +29,7 @@ function AdminHome() {
           <div className="d-flex justify-content-between align-items-center">
             <h3 className="mt-1 mr-2">Admin Panel</h3>
             <button className="btn1">
-              <a href="/addcar">ADD CAR</a>
+              <a href="/addcar">Add Vehicle</a>
             </button>
           </div>
         </Col>

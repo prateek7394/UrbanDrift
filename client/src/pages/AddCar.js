@@ -22,9 +22,9 @@ function AddCar() {
                <Row justify='center mt-5'>
                    <Col lg={12} sm={24} xs={24} className='p-2'>
                        <Form className='bs1 p-2' layout='vertical' onFinish={onFinish}>
-                           <h3>Add New Car</h3>
+                           <h3>Add New Vehicle</h3>
                            <hr />
-                           <Form.Item name='name' label='Car name' rules={[{required: true}]}>
+                           <Form.Item name='name' label='Vehicle name' rules={[{required: true}]}>
                                <Input/>
                            </Form.Item>
                            <Form.Item name='image' label='Image url' rules={[{required: true}]}>
@@ -41,7 +41,7 @@ function AddCar() {
                            </Form.Item>
 
                            <div className='text-right'>
-                           <button className='btn1'>ADD CAR</button>
+                           <button className='btn1'>ADD VEHICLE</button>
                            </div>
 
                        </Form>

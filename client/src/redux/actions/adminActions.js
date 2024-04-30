@@ -1,35 +1,35 @@
 import axios from "axios";
 import {message} from 'antd'
 
-export const userLogin=(reqObj)=>async dispatch=>{
+export const adminLogin=(reqObj)=>async dispatch=>{
     
     dispatch({type: 'LOADING' , payload:true})
 
     try {
-        const response = await axios.post('/api/users/login' , reqObj)
-        localStorage.setItem('user' , JSON.stringify(response.data))
+        const response = await axios.post('/api/admin/adminlogin' , reqObj)
+        localStorage.setItem('admin' , JSON.stringify(response.data))
         message.success('Login success')
         dispatch({type: 'LOADING' , payload:false})
         setTimeout(() => {
-            window.location.href='/home'
+            window.location.href='/admin'
          
         }, 500);
     } catch (error) {
         console.log(error)
-        message.error('User not found!')
+        message.error('Admin not found!')
         dispatch({type: 'LOADING' , payload:false})
     }
 }
 
-export const userRegister=(reqObj)=>async dispatch=>{
+export const adminRegister=(reqObj)=>async dispatch=>{
     
     dispatch({type: 'LOADING' , payload:true})
 
     try {
-        const response = await axios.post('/api/users/register' , reqObj)
+        const response = await axios.post('/api/admin/adminregister' , reqObj)
         message.success('Registration successful!')
         setTimeout(() => {
-            window.location.href='/login'
+            window.location.href='/adminlogin'
          
         }, 500);
        
